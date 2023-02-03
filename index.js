@@ -8,7 +8,7 @@ const lengthOutput = document.getElementById("length-output")
 const volumeOutput = document.getElementById("volume-output")
 const massOutput = document.getElementById("mass-output")
 const convertBtn = document.getElementById("convert-btn")
-
+const clearBtn = document.getElementById("clear-btn")
 
 convertBtn.addEventListener("click", function () {
     convert(inputEl, lengthOutput, 3.281, "meter", "feet")
@@ -16,11 +16,26 @@ convertBtn.addEventListener("click", function () {
     convert(inputEl, massOutput, 3.281, "kilogram", "pound")
 })
 
+clearBtn.addEventListener("click", clear())
 
+function clear(){
+    lengthOutput.textContent = ""
+    volumeOutput.textContent = ""
+    massOutput.textContent = ""
+    inputEl.textContent = ""
+}
 
 function convert(input, DOMel, value, unit1, unit2) {
-    let result = `${input.value} ${unit1} = ${(input.value * value).toFixed(3)} ${unit2} |
-                  ${input.value} ${unit2} = ${(input.value / value).toFixed(3)} ${unit1}`
+   const spanInput = input.textContent
+   
+   if(!isNaN(spanInput)){
+    let result = `${spanInput} ${unit1} = ${(spanInput * value).toFixed(3)} ${unit2} |
+    ${spanInput} ${unit2} = ${(spanInput / value).toFixed(3)} ${unit1}`
     DOMel.textContent = result
+   }else{
+        alert("Please input a valid number")
+        clear()
+   }
+    
 }
 

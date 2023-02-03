@@ -43,12 +43,14 @@ h1 {
 }
 
 #input-el {
-    width: 20%;
+    min-width: 20%;
     height: 10vh;
     border: 2px solid #B295FF;
     margin: 10px auto;
     border-radius: 5px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
     font-size: 3rem;
     text-align: center;
@@ -60,19 +62,39 @@ h1 {
     outline: none;
 }
 
-#convert-btn {
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.btn{
+    display: flex;
+    margin: 0 auto;
+    width: 20%;
+    text-align: center;
+    justify-content: space-between;
+}
+
+#convert-btn, #clear-btn {
     padding: 12px 0;
     border-radius: 5px;
     color: #3D3D3D;
     border: none;
     font-size: 1rem;
     font-weight: 600;
-    width: 20%;
-    margin: 0 auto;
-    text-align: center;
 }
 
-#convert-btn:hover {
+#convert-btn{
+    width: 70%;
+}
+#clear-btn{
+    width: 20%;
+}
+
+#convert-btn:hover, #clear-btn:hover {
     color: #FFF;
     background-color: #3D3D3D;
 }
@@ -115,12 +137,15 @@ h1 {
 
     #convert-btn,
     #input-el {
-        width: 30%;
+        min-width: 30%;
     }
 
     p {
         font-size: .9rem;
         padding: 0 15px;
+    }
+    .btn{
+        width: 30%;
     }
 
 }
