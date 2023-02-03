@@ -44,6 +44,8 @@ h1 {
 
 #input-el {
     min-width: 20%;
+    max-width: 80%;
+    overflow-x: hidden;
     height: 10vh;
     border: 2px solid #B295FF;
     margin: 10px auto;

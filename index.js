@@ -10,6 +10,15 @@ const massOutput = document.getElementById("mass-output")
 const convertBtn = document.getElementById("convert-btn")
 const clearBtn = document.getElementById("clear-btn")
 
+function checkSpanInput(){
+    const spanInput = inputEl.textContent
+    if(isNaN(spanInput)){
+        swal("Input should be a number")
+        inputEl.textContent = ""
+    }
+}
+
+
 convertBtn.addEventListener("click", function () {
     convert(inputEl, lengthOutput, 3.281, "meter", "feet")
     convert(inputEl, volumeOutput, 0.264, "liter", "gallon")
@@ -29,15 +38,9 @@ clearBtn.addEventListener("click", function(){
 
 
 function convert(input, DOMel, value, unit1, unit2) {
-   const spanInput = input.textContent
-   
-   if(!isNaN(spanInput)){
+    const spanInput = input.textContent
     let result = `${spanInput} ${unit1} = ${(spanInput * value).toFixed(3)} ${unit2} |
     ${spanInput} ${unit2} = ${(spanInput / value).toFixed(3)} ${unit1}`
     DOMel.textContent = result
-   }else{
-        swal("Please input a valid number")
-   }
-    
 }
 
