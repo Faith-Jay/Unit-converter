@@ -16,14 +16,17 @@ convertBtn.addEventListener("click", function () {
     convert(inputEl, massOutput, 3.281, "kilogram", "pound")
 })
 
-clearBtn.addEventListener("click", clear())
-
-function clear(){
+function clearOutput(){
     lengthOutput.textContent = ""
     volumeOutput.textContent = ""
     massOutput.textContent = ""
     inputEl.textContent = ""
 }
+
+clearBtn.addEventListener("click", function(){
+    clearOutput()
+})
+
 
 function convert(input, DOMel, value, unit1, unit2) {
    const spanInput = input.textContent
@@ -33,8 +36,7 @@ function convert(input, DOMel, value, unit1, unit2) {
     ${spanInput} ${unit2} = ${(spanInput / value).toFixed(3)} ${unit1}`
     DOMel.textContent = result
    }else{
-        alert("Please input a valid number")
-        clear()
+        swal("Please input a valid number")
    }
     
 }

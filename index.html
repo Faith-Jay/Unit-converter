@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unit Converter</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-   <main>
-     <section class="top-section">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="top-section">
         <h1>Metric/Imperial Unit Conversion</h1>
         <span id="input-el" role="textbox" contenteditable></span>
         <!-- <input type="number" id="input-el"></input> -->
-        <div class="btn"><button id="convert-btn">Convert</button>
-            <button id="clear-btn">clr</button>
+        <div class="btn">
+          <button id="convert-btn">Convert</button>
+          <button id="clear-btn">clr</button>
         </div>
-     </section>
-     <section class="bottom-section">
+      </section>
+      <section class="bottom-section">
         <div class="bottom lenght">
-            <h3>Length (Meter/Feet)</h3>
-            <p id="length-output"></p>
+          <h3>Length (Meter/Feet)</h3>
+          <p id="length-output"></p>
         </div>
         <div class="bottom volume">
-            <h3>Volume (Liters/Gallons)</h3>
-            <p id="volume-output"></p>
+          <h3>Volume (Liters/Gallons)</h3>
+          <p id="volume-output"></p>
         </div>
         <div class="bottom mass">
-            <h3>Mass (Kilograms/Pounds)</h3>
-            <p id="mass-output"></p>
+          <h3>Mass (Kilograms/Pounds)</h3>
+          <p id="mass-output"></p>
         </div>
-     </section>
-   </main>
-    
-   <script src="index.js"></script> 
-</body>
+      </section>
+    </main>
+
+    <script src="index.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
 </html>
